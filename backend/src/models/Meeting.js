@@ -1,0 +1,43 @@
+const { DataTypes } = require("sequelize");
+
+const sequelize = require("../config/db");
+
+const Meeting = sequelize.define("Meeting", {
+
+  title: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+
+  date: {
+    type: DataTypes.DATEONLY,
+    allowNull: false,
+  },
+
+  time: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+
+  status: {
+    type: DataTypes.ENUM(
+      "pending",
+      "accepted",
+      "rejected"
+    ),
+    defaultValue: "pending",
+  },
+
+  investorId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+
+  entrepreneurId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+
+});
+
+module.exports = Meeting;
