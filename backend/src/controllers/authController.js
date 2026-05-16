@@ -1,3 +1,14 @@
+return res.json({
+
+  token: "test123",
+
+  user: {
+    id: 1,
+    email: "test@test.com",
+    role: "admin"
+  }
+
+}); 
 const User = require("../models/User");
 
 const bcrypt = require("bcryptjs");
