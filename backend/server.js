@@ -15,7 +15,9 @@ const io = new Server(server, {
     origin: "*",
   },
 });
+const authRoutes = require("./src/routes/authRoutes");
 
+app.use("/api/auth", authRoutes);
 
 // SOCKET EVENTS
 io.on("connection", (socket) => {

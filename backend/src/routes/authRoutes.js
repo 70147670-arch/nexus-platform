@@ -37,7 +37,6 @@ router.post("/register", register);
 
 
 // LOGIN
-router.post("/login", login);
-
+router.post("/login", loginUser);
 
 module.exports = router;
